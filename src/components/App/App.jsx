@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import MovieDetails from 'pages/MovieDetails';
-// import MovieCast from 'components/MovieCast/MovieCast';
+import MovieCast from '../MovieCast';
 // import MovieReviews from 'components/MovieReviews/MovieReviews';
 
 const App = () => {
@@ -15,8 +15,8 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:movieId" element={<MovieDetails />}>
-          {/* <Route path="cast" element={<MovieCast />} />
-          <Route path="reviews" element={<MovieReviews />} /> */}
+          <Route path="cast" element={<MovieCast />} />
+          {/* <Route path="reviews" element={<MovieReviews />} /> */}
         </Route>
       </Route>
     </Routes>
