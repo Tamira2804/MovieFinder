@@ -30,9 +30,6 @@ const MovieDetails = () => {
 
   const { title, genres, overview, poster_path } = movieDetails;
 
-  console.log('Current Location:', location);
-  console.log('UseRef Location:', backLinkHref);
-
   return (
     <>
       {error && <h2>{error.message}</h2>}
