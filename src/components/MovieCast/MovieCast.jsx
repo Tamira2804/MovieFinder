@@ -29,14 +29,18 @@ const MovieCast = () => {
   return (
     <div>
       <ActorList>
-        {movieCast.map(actor => (
-          <ActorCardWrapper key={actor.id}>
+        {movieCast.map(({ id, profile_path, name, character }) => (
+          <ActorCardWrapper key={id}>
             <ActorImage
-              src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
-              alt={`${actor.name} photo`}
+              src={
+                profile_path
+                  ? `https://image.tmdb.org/t/p/w200${profile_path}`
+                  : `https://dummyimage.com/150x225&text=${name}`
+              }
+              alt={`${name} photo`}
             />
-            <ActorName>{actor.name}</ActorName>
-            <ActorRole>{actor.character}</ActorRole>
+            <ActorName>{name}</ActorName>
+            <ActorRole>{character}</ActorRole>
           </ActorCardWrapper>
         ))}
       </ActorList>
